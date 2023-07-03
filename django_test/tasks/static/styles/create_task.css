@@ -1,0 +1,7 @@
+// Create Task Page
+.create_task_page {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}

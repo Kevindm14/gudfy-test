@@ -1,0 +1,27 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+
+<a href="/create_task" class="add__task__btn">Añadir Tarea</a>
+
+<div class="cards">
+    {% for task in tasks %}
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{ task.title }}</h5>
+            <p class="card-text">{{ task.description }}</p>
+            <div>
+                {% if task.completed == False %}
+                    <a href="/complete_task/{{task.id}}" class="btn__check">✅ Completar</a>
+                {% else %}
+                    Completed ✅
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+
+{% endblock %}
